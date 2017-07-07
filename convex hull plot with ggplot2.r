@@ -13,3 +13,5 @@ hull<-df[chull(df),] #chull(convex hull) function from package 'grDevices' this 
 hull<-rbind(hull,hull[1,]) #adding first value of hull dataframe to itself (useful to draw closed path)
 
 ggplot()+geom_point(data=df,aes(x,y),color="blue")+geom_path(data=hull,aes(x,y),color="red") # plotting points and boundary
+
+ggplot()+geom_point(data=df,aes(x,y),color="blue")+geom_polygon(data=hull,aes(x,y),color="red",alpha=0.2) # plotting points and area
